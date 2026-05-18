@@ -5,6 +5,7 @@ A full stack Todo List app with user login and registration. Each user manages t
 ---
 
 ## Tech Stack
+
 - **Frontend** — React, React Router, Axios, Vite
 - **Backend** — Node.js, Express.js
 - **Database** — MongoDB, Mongoose
@@ -13,6 +14,7 @@ A full stack Todo List app with user login and registration. Each user manages t
 ---
 
 ## Folder Structure
+
 ```
 todo-app/
 ├── backend/
@@ -46,28 +48,34 @@ todo-app/
 ## Setup
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/yourusername/todo-app.git
 cd todo-app
 ```
 
 ### 2. Backend setup
+
 ```bash
 cd backend
 npm install
 cp .env.example .env
 ```
+
 Fill in your `.env`:
+
 ```
 PORT=5000
 MONGO_URI=
 JWT_SECRET=
 ```
+
 ```bash
 npm run dev
 ```
 
 ### 3. Frontend setup
+
 ```bash
 cd frontend
 npm install
@@ -80,18 +88,19 @@ Open **http://localhost:5173**
 
 ## API Endpoints
 
-| Method | URL | Description | Auth |
-|--------|-----|-------------|------|
-| POST | /api/auth/register | Register user | No |
-| POST | /api/auth/login | Login user | No |
-| GET | /api/todos | Get all todos | Yes |
-| POST | /api/todos | Create todo | Yes |
-| PUT | /api/todos/:id | Update todo | Yes |
-| DELETE | /api/todos/:id | Delete todo | Yes |
+| Method | URL                | Description   | Auth |
+| ------ | ------------------ | ------------- | ---- |
+| POST   | /api/auth/register | Register user | No   |
+| POST   | /api/auth/login    | Login user    | No   |
+| GET    | /api/todos         | Get all todos | Yes  |
+| POST   | /api/todos         | Create todo   | Yes  |
+| PUT    | /api/todos/:id     | Update todo   | Yes  |
+| DELETE | /api/todos/:id     | Delete todo   | Yes  |
 
 ---
 
 ## Features
+
 - User Registration and Login
 - JWT Authentication
 - Each user sees only their own tasks

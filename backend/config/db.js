@@ -1,13 +1,13 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, { family: 4 })
-    console.log('MongoDB Connected')
+    await mongoose.connect(process.env.MONGO_URI, { family: 4 });
+    console.log("MongoDB Connected");
   } catch (error) {
-    console.error(error.message)
-    process.exit(1)
+    console.error(error.message);
+    process.exit(1);
   }
-}
+};
 
-export default connectDB
+export default connectDB;

@@ -1,11 +1,14 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
-  const { user, logout } = useAuth()
-  const navigate = useNavigate()
-  const handleLogout = () => { logout(); navigate('/login') }
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <nav className="navbar">
@@ -17,5 +20,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }
