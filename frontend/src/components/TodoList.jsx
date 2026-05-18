@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 
-const API = import.meta.env.VITE_API_URL;
-
 export default function TodoList() {
   const { user } = useAuth();
   const [todos, setTodos] = useState([]);
@@ -12,27 +10,27 @@ export default function TodoList() {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    axios.get(`${API}/api/todos`).then((res) => setTodos(res.data));
+    axios.get("/api/todos").then((res) => setTodos(res.data));
   }, []);
 
   const addTodo = async (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-    const res = await axios.post(`${API}/api/todos`, { title, description });
+    const res = await axios.post("/api/todos", { title, description });
     setTodos([res.data, ...todos]);
     setTitle("");
     setDescription("");
   };
 
   const toggleTodo = async (todo) => {
-    const res = await axios.put(`${API}/api/todos/${todo._id}`, {
+    const res = await axios.put(`/api/todos/${todo._id}`, {
       completed: !todo.completed,
     });
     setTodos(todos.map((t) => (t._id === todo._id ? res.data : t)));
   };
 
   const deleteTodo = async (id) => {
-    await axios.delete(`${API}/api/todos/${id}`);
+    await axios.delete(`/api/todos/${id}`);
     setTodos(todos.filter((t) => t._id !== id));
   };
 
